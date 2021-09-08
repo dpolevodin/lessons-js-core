@@ -1,0 +1,184 @@
+body,
+html {
+	width: 100%;
+	background: rgb(0,255,250);
+	background: linear-gradient(15deg, rgba(0,255,250,0.1) 0%, rgba(217,255,142,0.2) 37%, rgba(214,255,154,0.3) 57%, rgba(0,184,63,0.3) 91%);
+	font-size: 16px;
+}
+
+.person {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 1280px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 32px;
+	color: #000;
+	font-family: sans-serif;
+}
+
+.person__info {
+	/* добавьте ваш код  */
+}
+
+.person__contacts {
+	width: 360px;
+}
+
+.person__details {
+	/* добавьте ваш код  */
+}
+
+.avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 360px;
+	margin-right: 32px;
+	margin-bottom: 32px;
+}
+
+.avatar__picture {
+	width: 100%;
+	border: 32px solid #FFF;
+	border-radius: 50%;
+	transition: width 1s, transform 1s linear;
+}
+
+.avatar__picture:hover {
+	border: 32px solid rgba(134, 197, 176, 0.658);
+	transform: rotate(180deg);
+	width: 75%;
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 32px;
+}
+
+.contacts__name {
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.contacts__role {
+	margin-bottom: 36px;
+	font-size: 19.2px;
+	font-weight: 700;
+}
+
+.contacts__item {
+	font-style: italic;
+	font-weight: 700;
+}
+
+.contacts__title {
+	/* добавьте ваш код  */
+}
+
+.contacts__title:after {
+	content: ':';
+}
+
+.contacts__link {
+	color: gray;
+	font-weight: 400;
+}
+
+.paragraph {
+	margin-bottom: 16px;
+}
+
+.paragraph_last {
+	display: block;
+	margin-bottom: 48px;
+}
+
+.paragraph__description-links {
+	margin-bottom: 16px;
+}
+
+@media only screen and (max-device-width : 320px) {
+	.person {
+		flex-direction: column;
+		padding: 32px 80px;
+	}
+
+	.avatar {
+		width: 100%;
+	}
+
+	.person__contacts {
+		width: 100%;
+	}
+
+	.contacts__name {
+		text-align: center;
+		font-size: 72px;
+	}
+
+	.contacts__role {
+		text-align: center;
+	}
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.person {
+		flex-direction: column;
+		padding: 32px 80px;
+	}
+
+	.avatar {
+		width: 100%;
+	}
+
+	.person__contacts {
+		width: 100%;
+	}
+
+	.contacts__name {
+		text-align: center;
+		font-size: 72px;
+	}
+
+	.contacts__role {
+		text-align: center;
+	}
+}
+
+@media only screen and (min-device-width : 481px) and (max-device-width : 768px) {
+	.person__contacts {
+		width: 320px;
+	}
+}
+
+@media only screen and (min-device-width : 769px) and (max-device-width : 979px) {
+	.person {
+		flex-direction: row;
+		padding: 32px 80px;
+	}
+
+	.contacts__name {
+		font-size: 36px;
+	}
+}
+
+@media only screen and (min-device-width : 980px) and (max-device-width : 1199px) {
+	.person {
+		flex-direction: row;
+		padding: 32px 80px;
+	}
+
+	.contacts__name {
+		font-size: 36px;
+	}
+}
+
+@media only screen and (min-width : 1200px) {
+	.person {
+		width: 1024px;
+	}
+}
