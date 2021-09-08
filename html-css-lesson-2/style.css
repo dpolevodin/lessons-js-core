@@ -32,6 +32,9 @@ html {
 }
 
 .avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 360px;
 	margin-right: 32px;
 	margin-bottom: 32px;
@@ -41,10 +44,13 @@ html {
 	width: 100%;
 	border: 32px solid #FFF;
 	border-radius: 50%;
+	transition: width 1s, transform 1s linear;
 }
 
 .avatar__picture:hover {
 	border: 32px solid rgba(134, 197, 176, 0.658);
+	transform: rotate(180deg);
+	width: 75%;
 }
 
 .contacts {
