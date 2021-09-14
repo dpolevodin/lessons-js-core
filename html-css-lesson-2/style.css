@@ -1,15 +1,20 @@
+:root {
+	--background-theme: linear-gradient(15deg, rgba(0,255,250,0.1) 0%, rgba(217,255,142,0.2) 37%, rgba(214,255,154,0.3) 57%, rgba(0,184,63,0.3) 91%);
+	--background-dark-theme: linear-gradient(0deg, rgba(0,0,0,1) 38%, rgba(7,18,15,1) 62%, rgba(20,50,43,1) 71%, rgba(17,59,55,1) 85%, rgba(36,51,61,0.7091211484593838) 100%);
+	--elements-color-theme: #000;
+}
+
 body,
 html {
-	--background-light-theme: linear-gradient(15deg, rgba(0,255,250,0.1) 0%, rgba(217,255,142,0.2) 37%, rgba(214,255,154,0.3) 57%, rgba(0,184,63,0.3) 91%);
-	--background-dark-theme: linear-gradient(0deg, rgba(0,0,0,1) 38%, rgba(7,18,15,1) 62%, rgba(20,50,43,1) 71%, rgba(17,59,55,1) 85%, rgba(36,51,61,0.7091211484593838) 100%);
-	--elements-color-light-theme: #000;
-	--elements-color-dark-theme: #FFF;
-	
 	min-width: 320px;
 	background: rgb(0,255,250);
-	background: var(--background-light-theme);
-	font-size: 16px;
+	background: var(--background-theme);
+	font-family: 'Jura', sans-serif;
+	font-size: 1rem;
 }
+
+a {color:rgb(39, 121, 114); font-weight:bold}
+a:hover {color:#ffae00; font-weight:bold}
 
 .person {
 	display: flex;
@@ -20,9 +25,8 @@ html {
 	width: 1280px;
 	max-width: 100%;
 	margin: 0 auto;
-	padding: 32px;
-	color: var(--elements-color-light-theme);
-	font-family: sans-serif;
+	padding: 2rem;
+	color: var(--elements-color-theme);
 }
 
 .buttons-area {
@@ -68,8 +72,8 @@ html {
   }
 
   .button:disabled {
-    border-color: #575757;
-    color: #575757;
+    border-color: #57575731;
+    color: #57575731;
   }
 
 .person__info {
@@ -94,7 +98,7 @@ html {
 
 .avatar__picture {
 	width: 100%;
-	border: 32px solid #FFF;
+	border: 2rem solid #FFF;
 	border-radius: 50%;
 }
 
@@ -208,17 +212,17 @@ html {
 .contacts {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 32px;
+	margin-bottom: 2rem;
 }
 
 .contacts__name {
-	font-size: 32px;
+	font-size: 2rem;
 	font-weight: 700;
 }
 
 .contacts__role {
-	margin-bottom: 36px;
-	font-size: 19.2px;
+	margin-bottom: 2rem;
+	font-size: 1.2rem;
 	font-weight: 700;
 }
 
@@ -236,27 +240,83 @@ html {
 }
 
 .contacts__link {
-	color: gray;
 	font-weight: 400;
 }
 
 .paragraph {
-	margin-bottom: 16px;
+	margin-bottom: 1rem;
 }
 
 .paragraph_last {
 	display: block;
-	margin-bottom: 48px;
+	margin-bottom: 3rem;
 }
 
 .paragraph__description-links {
-	margin-bottom: 16px;
+	margin-bottom: 1rem;
+}
+
+.checkbox-area {
+	margin-bottom: 3rem;
+	cursor: pointer;
+}
+
+.checkbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.checkbox + label {
+	position: relative;
+	padding: 0 0 0 60px;
+	
+}
+
+.checkbox + label:before {
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: 0;
+	width: 50px;
+	height: 26px;
+	border-radius: 13px;
+	background: #CDD1DA;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+	transition: .2s;
+	cursor: pointer;
+}
+
+.checkbox + label:after {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: 2px;
+	width: 22px;
+	height: 22px;
+	border-radius: 10px;
+	background: #FFF;
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	transition: .2s;
+	cursor: pointer;
+}
+
+.checkbox:checked + label:before {
+	background: rgba(46, 189, 194, 0.7);
+}
+
+.checkbox:checked + label:after {
+	left: 26px;
+}
+
+.checkbox:focus + label:before {
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.2), 0 0 0 3px rgba(43, 139, 143, 0);
 }
 
 @media only screen and (max-device-width : 320px) {
 	.person {
 		flex-direction: column;
-		padding: 32px 80px;
+		padding: 2rem 5rem;
 	}
 
 	.avatar {
@@ -269,7 +329,7 @@ html {
 
 	.contacts__name {
 		text-align: center;
-		font-size: 72px;
+		font-size: 4.5rem;
 	}
 
 	.contacts__role {
@@ -296,7 +356,7 @@ html {
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.person {
 		flex-direction: column;
-		padding: 32px 80px;
+		padding: 2rem 5rem;
 	}
 
 	.avatar {
@@ -309,7 +369,7 @@ html {
 
 	.contacts__name {
 		text-align: center;
-		font-size: 72px;
+		font-size: 4.5rem;
 	}
 
 	.contacts__role {
@@ -343,11 +403,11 @@ html {
 @media only screen and (min-device-width : 769px) and (max-device-width : 979px) {
 	.person {
 		flex-direction: row;
-		padding: 32px 80px;
+		padding: 1rem 5rem;
 	}
 
 	.contacts__name {
-		font-size: 36px;
+		font-size: 2.5rem;
 	}
 	
 }
@@ -355,11 +415,11 @@ html {
 @media only screen and (min-device-width : 980px) and (max-device-width : 1199px) {
 	.person {
 		flex-direction: row;
-		padding: 32px 80px;
+		padding: 2rem 5rem;
 	}
 
 	.contacts__name {
-		font-size: 36px;
+		font-size: 2.5rem;
 	}
 }
 
