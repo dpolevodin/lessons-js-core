@@ -1,8 +1,13 @@
 body,
 html {
-	width: 100%;
+	--background-light-theme: linear-gradient(15deg, rgba(0,255,250,0.1) 0%, rgba(217,255,142,0.2) 37%, rgba(214,255,154,0.3) 57%, rgba(0,184,63,0.3) 91%);
+	--background-dark-theme: linear-gradient(0deg, rgba(0,0,0,1) 38%, rgba(7,18,15,1) 62%, rgba(20,50,43,1) 71%, rgba(17,59,55,1) 85%, rgba(36,51,61,0.7091211484593838) 100%);
+	--elements-color-light-theme: #000;
+	--elements-color-dark-theme: #FFF;
+	
+	min-width: 320px;
 	background: rgb(0,255,250);
-	background: linear-gradient(15deg, rgba(0,255,250,0.1) 0%, rgba(217,255,142,0.2) 37%, rgba(214,255,154,0.3) 57%, rgba(0,184,63,0.3) 91%);
+	background: var(--background-light-theme);
 	font-size: 16px;
 }
 
@@ -11,13 +16,62 @@ html {
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
+	justify-content: center;
 	width: 1280px;
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 32px;
-	color: #000;
+	color: var(--elements-color-light-theme);
 	font-family: sans-serif;
 }
+
+
+.buttons-area {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-right: 3rem;
+}
+
+.button {
+	width: 5rem;
+    height: 5rem;
+    background-color: rgba(123, 123, 123, 0);
+    font-family: inherit;
+    font-size: 1.5rem;
+    border-radius: 0%;
+	margin-bottom: -0.2rem;
+    border: var(--elements-color-dark-theme) solid 0.2rem;
+    color: var(--elements-color-light-theme);
+    cursor: pointer;
+	z-index: 10;
+}
+
+.button:first-child {
+	border-start-start-radius: 20%;
+	border-start-end-radius: 20%;
+}
+
+.button:last-child {
+	border-end-start-radius: 20%;
+	border-end-end-radius: 20%;
+}
+
+.button:hover {
+    border-color: #2aafe4;
+    box-shadow: 0 0 1.5rem #2aafe4;
+	z-index: 20;
+  }
+  
+  .button:focus {
+    background-color: rgba(46, 189, 194, 0.3);
+  }
+
+  .button:disabled {
+    border-color: #575757;
+    color: #575757;
+  }
 
 .person__info {
 	/* добавьте ваш код  */
@@ -28,7 +82,7 @@ html {
 }
 
 .person__details {
-	/* добавьте ваш код  */
+	padding-top: 3rem;
 }
 
 .avatar {
@@ -36,22 +90,121 @@ html {
 	justify-content: center;
 	align-items: center;
 	width: 360px;
-	margin-right: 32px;
-	margin-bottom: 32px;
+	margin-right: 3rem;
 }
 
 .avatar__picture {
 	width: 100%;
 	border: 32px solid #FFF;
 	border-radius: 50%;
-	transition: width 1s, transform 1s linear;
 }
 
-.avatar__picture:hover {
-	border: 32px solid rgba(134, 197, 176, 0.658);
-	transform: rotate(180deg);
-	width: 75%;
+/* Animation's classes */
+.avatar-animation-rotate {
+	animation: avatar-animation-rotate 2s 1;
 }
+
+.avatar-animation-move {
+	animation: avatar-animation-move 2s 1;
+}
+
+.avatar-animation-pulse {
+	animation: avatar-animation-pulse 2s 1;
+}
+
+.avatar-animation-flucker {
+	animation: avatar-animation-flucker 2s 1;
+}
+
+
+/* Animation description */
+@keyframes avatar-animation-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes avatar-animation-move {
+    50% {
+        transform: translate(2000px);
+    }
+	51% {
+		transform: translate(-1000px);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+@keyframes avatar-animation-pulse {
+	10% {
+        transform: scale(0.8, 0.8)
+    }
+    20% {
+        transform: scale(1, 1)
+    }
+    30% {
+        transform: scale(0.8, 0.8)
+    }
+    40% {
+        transform: scale(1, 1)
+    }
+    50% {
+        transform: scale(0.8, 0.8)
+    }
+    60% {
+        transform: scale(1, 1)
+    }
+    70% {
+        transform: scale(0.8, 0.8)
+    }
+    80% {
+        transform: scale(1, 1)
+    }
+    90% {
+        transform: scale(0.8, 0.8)
+    }
+    100% {
+        transform: scale(1, 1)
+    }
+}
+
+@keyframes avatar-animation-flucker {
+	10% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	30% {
+		opacity: 0;
+	}
+	40% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	60% {
+		opacity: 1;
+	}
+	70% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 
 .contacts {
 	display: flex;
@@ -123,6 +276,22 @@ html {
 	.contacts__role {
 		text-align: center;
 	}
+
+	.buttons-area {
+		flex-direction: row;
+		padding-top: 2rem;
+		border-radius: 0;
+	}
+
+	.button:first-child {
+		border-start-start-radius: 0;
+		border-start-end-radius: 0;
+	}
+	
+	.button:last-child {
+		border-end-start-radius: 0;
+		border-end-end-radius: 0;
+	}
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -147,7 +316,24 @@ html {
 	.contacts__role {
 		text-align: center;
 	}
+
+	.buttons-area {
+		flex-direction: row;
+		padding-top: 2rem;
+		border-radius: 0;
+	}
+
+	.button:first-child {
+		border-start-start-radius: 0;
+		border-start-end-radius: 0;
+	}
+	
+	.button:last-child {
+		border-end-start-radius: 0;
+		border-end-end-radius: 0;
+	}
 }
+
 
 @media only screen and (min-device-width : 481px) and (max-device-width : 768px) {
 	.person__contacts {
@@ -164,6 +350,7 @@ html {
 	.contacts__name {
 		font-size: 36px;
 	}
+	
 }
 
 @media only screen and (min-device-width : 980px) and (max-device-width : 1199px) {

@@ -9,9 +9,17 @@
 		<div class="person">
 
 			<div class="person__info">
-				<div class="avatar">
+				<div id="avatar" class="avatar">
 					<img class="avatar__picture" src="./avatar.jpg" />
 				</div>
+				
+			</div>
+
+			<div class="buttons-area">
+				<button class="button button-top-left" onclick="animationClass.changeClass('rotate')">↻</button>
+				<button class="button button-top-left" onclick="animationClass.changeClass('move')">↳</button>
+				<button class="button button-top-left" onclick="animationClass.changeClass('pulse')">◉</button>
+				<button class="button button-top-left" onclick="animationClass.changeClass('flucker')">◧</button>
 			</div>
 
 			<div class="person__contacts">
@@ -84,5 +92,7 @@
 			</div>
 
 		</div>
+		
+		<script src="./script.js"></script>
 	</body>
 </html>
