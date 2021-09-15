@@ -85,6 +85,7 @@ a:hover {color:#ffae00; font-weight:bold}
 }
 
 .person__details {
+	position: relative;
 	padding-top: 3rem;
 }
 
@@ -253,7 +254,22 @@ a:hover {color:#ffae00; font-weight:bold}
 }
 
 .paragraph__description-links {
-	margin-bottom: 1rem;
+	margin-bottom: 3rem;
+}
+
+.paragraph__description-img {
+	width: 10%;	
+	float: left;
+	margin: 0 1rem 1rem 0;
+}
+
+.paragraph__description-img:hover {
+	position: absolute;
+	top: 10rem;
+	left: 8rem;
+	width: 70%;
+	box-shadow: 0rem 2rem 2rem #000000;
+	z-index: 30;
 }
 
 .checkbox-area {
