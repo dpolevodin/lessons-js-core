@@ -102,7 +102,7 @@ a:hover {color:#ffae00; font-weight:bold}
 
 .avatar__picture {
 	width: 100%;
-	border: 2rem solid #FFF;
+	border: 1rem solid #FFF;
 	border-radius: 50%;
 }
 
@@ -249,6 +249,7 @@ a:hover {color:#ffae00; font-weight:bold}
 }
 
 .paragraph {
+	font-size: 1.2rem;
 	margin-bottom: 1rem;
 	z-index: 2;
 }
