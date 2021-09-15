@@ -30,4 +30,3 @@ const animationClass = {
         }, 2000);
     }
 }
-
