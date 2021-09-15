@@ -280,7 +280,7 @@ a:hover {color:#ffae00; font-weight:bold}
 .bg-shape {
 	position: absolute;
 	right: 0;
-	top: 10rem;
+
 	opacity: 0.4;
 	transform: scale(2.2, 1.2);
 	z-index: 0;

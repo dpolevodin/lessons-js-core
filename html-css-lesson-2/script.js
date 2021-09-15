@@ -28,5 +28,15 @@ const animationClass = {
                 item.removeAttribute('disabled')
             }
         }, 2000);
+    },
+    bgParallax: () => {
+        const bg = document.getElementById('bg-shape')
+
+        window.addEventListener('scroll', () => {
+        const value = window.scrollY
+        bg.style.top = value * 0.5 + 'px'
+        })
     }
 }
+
+animationClass.bgParallax()

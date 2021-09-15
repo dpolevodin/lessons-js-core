@@ -9,17 +9,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<img class="bg-shape" src="./img/bg-shape.png" alt="shape" />
+		<img id="bg-shape" class="bg-shape" src="./img/bg-shape.png" alt="shape" />
 		<div class="person">
 
 			<div class="person__info">
 				<div id="avatar" class="avatar">
 					<img class="avatar__picture" src="./img/avatar.jpg" alt="avatar" />
 				</div>
-				
 			</div>
 
-			<div class="buttons-area">
+			<div id="buttons-area" class="buttons-area">
 				<button class="button button-top-left" onclick="animationClass.changeClass('rotate')">↻</button>
 				<button class="button button-top-left" onclick="animationClass.changeClass('move')">↳</button>
 				<button class="button button-top-left" onclick="animationClass.changeClass('pulse')">◉</button>
@@ -55,7 +54,7 @@
 				</div>
 			</div>
 
-			<div class="person__details">
+			<div id="text" class="person__details">
 				<p class="paragraph">
 					Мой интерес к frontend-разработке, как и сфере IT, достиг своего пика в январе 2021 года. 
 					После изучения нескольких курсов по Python и основам программирования в 2020-м году, 
