@@ -15,7 +15,6 @@ const animationClass = {
     changeClass: (animationType) => {
         const avatar = document.getElementById('avatar')
         const buttons = document.querySelectorAll('button')
-        console.log(avatar)
         avatar.classList.add(`avatar-animation-${animationType}`)
         
         for (item of buttons) {
@@ -30,7 +29,7 @@ const animationClass = {
         }, 2000);
     },
     bgParallax: () => {
-        const bg = document.getElementById('bg-shape')
+        const bg = document.getElementById('background-image')
 
         window.addEventListener('scroll', () => {
         const value = window.scrollY
